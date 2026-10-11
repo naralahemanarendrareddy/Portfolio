@@ -1,0 +1,73 @@
+.education-timeline { position: relative; display: grid; gap: 28px; padding-left: 8px; }
+
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 31px;
+  width: 3px;
+  border-radius: 3px;
+  background: linear-gradient(var(--brand), var(--accent));
+  opacity: 0.35;
+}
+
+.education-item { position: relative; display: flex; gap: 26px; align-items: flex-start; }
+
+.timeline-icon {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+  box-shadow: 0 0 0 6px var(--bg), var(--shadow-sm);
+}
+
+.education-card {
+  flex: 1;
+  padding: 26px 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.education-card:hover { transform: translateX(6px); box-shadow: var(--shadow-md); }
+
+.education-card-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
+.education-level { font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.education-card h2 { font-size: 20px; }
+
+.education-year {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--brand-dark);
+  background: var(--tint);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.education-meta { display: flex; flex-wrap: wrap; gap: 12px 28px; font-size: 15.5px; }
+.education-meta span { display: inline-flex; align-items: center; gap: 10px; }
+.education-meta svg { color: var(--brand); flex: 0 0 auto; }
+.education-result { font-weight: 600; color: var(--ink); }
+.education-result svg { color: var(--accent); }
+
+.education-note { margin-top: 14px; padding-top: 14px; font-size: 14.5px; color: var(--muted); border-top: 1px dashed var(--border); }
+
+@media (max-width: 620px) {
+  .education-timeline::before { left: 27px; }
+  .education-item { gap: 16px; }
+  .timeline-icon { width: 40px; height: 40px; font-size: 17px; }
+  .education-card { padding: 22px 20px; }
+}

@@ -1,0 +1,41 @@
+.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 34px 30px 30px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand), var(--accent));
+}
+.project-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-md); }
+
+.project-number {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-family: var(--font-head);
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--tint);
+}
+
+.project-type { font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; position: relative; }
+.project-card h2 { font-size: 21px; margin-bottom: 14px; position: relative; padding-right: 36px; }
+.project-description { font-size: 15.5px; margin-bottom: 20px; flex: 1; }
+.project-card .technology-list { margin-bottom: 26px; }
+.project-buttons { display: flex; flex-wrap: wrap; gap: 10px; }
+
+@media (max-width: 1060px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .projects-grid { grid-template-columns: 1fr; } }
